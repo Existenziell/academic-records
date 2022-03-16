@@ -14,7 +14,7 @@ export default function Home() {
         <p className='max-w-lg'>The internet site that securely records, stores and generates professional school records and reports, meeting the constantly changing needs of today's private and home school academies!</p>
       </div>
 
-      <Link href='transcript'><a><button className='button block my-8 mx-auto'>Start</button></a></Link>
+      <Link href='/register'><a><button className='button block my-8 mx-auto'>Start</button></a></Link>
 
       <div className='my-8 bg-brand-dark/50 dark:bg-brand/50 backdrop-blur-md text-white dark:text-brand-dark p-4 rounded-sm italic'>
         <h2>Testimonial Tammy White:</h2>

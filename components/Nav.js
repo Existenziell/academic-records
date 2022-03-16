@@ -5,7 +5,8 @@ import Link from 'next/link'
 const Nav = () => {
     const links = [
         { name: 'Home', url: '/' },
-        { name: 'Transcript', url: '/transcript' },
+        { name: 'Register', url: '/register' },
+        { name: 'Reports', url: '/reports' },
         { name: 'Account', url: '/account' },
         { name: 'Contact', url: '/contact' },
     ]
@@ -21,7 +22,7 @@ const Nav = () => {
 
     return (
 
-        <div className='w-full py-3 md:py-0 dark:bg-brand-dark dark:text-brand'>
+        <div className='w-full py-3 md:py-0 dark:bg-brand-dark dark:text-brand font-mono text-sm'>
 
             {/* Desktop Menu */}
             <nav>
