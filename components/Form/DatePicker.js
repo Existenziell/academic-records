@@ -23,7 +23,7 @@ const DPicker = ({ name, styles }) => {
 
   return (
     <div className={styles}>
-      <DatePicker selected={startDate} onChange={date => handleFirst(date)} name={name} className='border rounded px-4 py-2 text-center' />
+      <DatePicker selected={startDate} onChange={date => handleFirst(date)} name={name} className='border rounded px-4 py-2 text-center text-brand-dark' />
     </div>
   )
 }
