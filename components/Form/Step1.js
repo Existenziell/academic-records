@@ -19,21 +19,21 @@ const Step1 = () => {
         <div className='relative mb-8 mr-2 w-full'>
           <Input
             type='text' id='firstname' name='firstname' value={values.firstname} placeholder='First Name'
-            onChange={e => handleChange({ name: e.target.name, value: e.target.value })} required={true} disabled={false}
+            handleChange={handleChange} required={true} disabled={false}
             styles='border border-brand-dark'
           />
         </div>
         <div className='relative mb-8 mr-2 w-full'>
           <Input
             type='text' id='middlename' name='middlename' value={values.middlename} placeholder='Middle Name'
-            onChange={e => handleChange({ name: e.target.name, value: e.target.value })} required={true} disabled={false}
+            handleChange={handleChange} required={true} disabled={false}
             styles='border border-brand-dark'
           />
         </div>
         <div className='relative mb-8 w-full'>
           <Input
             type='text' id='lastname' name='lastname' value={values.lastname} placeholder='Last Name'
-            onChange={e => handleChange({ name: e.target.name, value: e.target.value })} required={true} disabled={false}
+            handleChange={handleChange} required={true} disabled={false}
             styles='border border-brand-dark'
           />
         </div>
@@ -42,7 +42,7 @@ const Step1 = () => {
       <div className='relative mb-8'>
         <Input
           type='email' id='email' name='email' value={values.email} placeholder='Email'
-          onChange={e => handleChange({ name: e.target.name, value: e.target.value })} required={true} disabled={false}
+          handleChange={handleChange} required={true} disabled={false}
           styles='border border-brand-dark'
         />
       </div>

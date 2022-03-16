@@ -71,3 +71,15 @@ html, body {
   @apply px-4 py-2 border border-brand-dark dark:border-brand 
   hover:bg-brand-dark hover:text-brand dark:hover:bg-brand dark:hover:text-brand-dark transition-all;
 }
+
+.valid {
+  @apply border-green-600 border-2;
+}
+
+.changed {
+  @apply border-orange-400 border-2;
+}
+
+.invalid {
+  @apply border-red-600 border-2;
+}

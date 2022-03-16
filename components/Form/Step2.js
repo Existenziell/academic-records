@@ -46,21 +46,21 @@ const Step2 = () => {
         <div className='relative mb-8 mr-2 w-full'>
           <Input
             type='number' id='satScore' name='satScore' value={values.satScore} placeholder='SAT Score'
-            onChange={e => handleChange({ name: e.target.name, value: e.target.value })} required={true} disabled={false}
+            handleChange={handleChange} required={true} disabled={false}
             styles='border border-brand-dark'
           />
         </div>
         <div className='relative mb-8 mr-2 w-full'>
           <Input
             type='number' id='actScore' name='actScore' value={values.actScore} placeholder='ACT Score'
-            onChange={e => handleChange({ name: e.target.name, value: e.target.value })} required={true} disabled={false}
+            handleChange={handleChange} required={true} disabled={false}
             styles='border border-brand-dark'
           />
         </div>
         <div className='relative mb-8 mr-2 w-full'>
           <Input
             type='number' id='cltScore' name='cltScore' value={values.cltScore} placeholder='CLT Score'
-            onChange={e => handleChange({ name: e.target.name, value: e.target.value })} required={true} disabled={false}
+            handleChange={handleChange} required={true} disabled={false}
             styles='border border-brand-dark'
           />
         </div>
