@@ -7,19 +7,21 @@ export const localStorageKey = 'AR_FormData'
 export const StateProvider = ({ children }) => {
 
   const [values, setValues] = useState({
+    firstname: '',
+    middlename: '',
+    lastname: '',
+    email: '',
+    birthdate: '',
     gradelevel: '',
     satScore: '',
     actScore: '',
     cltScore: '',
-    firstname: '',
-    middlename: '',
-    lastname: '',
-    email: ''
+    date: '',
   })
 
-  const handleChange = (target) => {
-    setValues({ ...values, [target.name]: target.value })
-    window.localStorage.setItem(localStorageKey, JSON.stringify({ ...values, [target.name]: target.value }))
+  const handleChange = ({ name, value }) => {
+    setValues({ ...values, [name]: value })
+    window.localStorage.setItem(localStorageKey, JSON.stringify({ ...values, [name]: value }))
   }
 
   return (

@@ -1,10 +1,30 @@
 import { useEffect, useContext } from 'react'
+import SelectList from './SelectList'
 import Input from './Input'
 import { AppContext, localStorageKey } from '../../context/AppContext'
 
 const Step2 = () => {
 
   const { values, setValues, handleChange } = useContext(AppContext)
+
+  const grades = [
+    { value: '1st', label: '1st' },
+    { value: '2nd', label: '2nd' },
+    { value: '3rd', label: '3rd' },
+    { value: '4th', label: '4th' },
+    { value: '5th', label: '5th' },
+    { value: '6th', label: '6th' },
+    { value: '7th', label: '7th' },
+    { value: '8th', label: '8th' },
+    { value: '9th', label: '9th' },
+    { value: '10t', label: '10th' },
+    { value: '11t', label: '11th' },
+    { value: '12t', label: '12th' },
+    { value: 'Fre', label: 'Freshman' },
+    { value: 'Sop', label: 'Sophomore' },
+    { value: 'Jun', label: 'Junior' },
+    { value: 'Sen', label: 'Senior' },
+  ]
 
   useEffect(() => {
     const stickyValues = window.localStorage.getItem(localStorageKey)
@@ -15,51 +35,32 @@ const Step2 = () => {
 
   return (
     <div>
-      <div className='relative mb-8 mr-2 w-full'>
-        <label
-          htmlFor='gradelevel'
-          className='mr-4'>
-          Grade level to begin reporting on Transcript:
-        </label>
-        <select onChange={e => handleChange(e.target)} value={values.gradelevel} className='border border-brand-dark p-2 rounded text-brand-dark' name='gradelevel' id='gradelevel'>
-          <option value="1st">1st</option>
-          <option value='2nd'>2nd</option>
-          <option value='3rd'>3rd</option>
-          <option value='4th'>4th</option>
-          <option value='5th'>5th</option>
-          <option value='6th'>6th</option>
-          <option value='7th'>7th</option>
-          <option value='8th'>8th</option>
-          <option value='9th'>9th</option>
-          <option value='10t'>10th</option>
-          <option value='11t'>11th</option>
-          <option value='12t'>12th</option>
-          <option value='Fre'>Freshman</option>
-          <option value='Sop'>Sophomore</option>
-          <option value='Jun'>Junior</option>
-          <option value='Sen'>Senior</option>
-        </select>
-      </div>
+      <SelectList
+        options={grades}
+        name='gradelevel'
+        label='Grade level to begin reporting on Transcript:'
+        styles='mb-8'
+      />
 
       <div className='flex items-center justify-between'>
         <div className='relative mb-8 mr-2 w-full'>
           <Input
             type='number' id='satScore' name='satScore' value={values.satScore} placeholder='SAT Score'
-            onChange={e => handleChange(e.target)} required={true} disabled={false}
+            onChange={e => handleChange({ name: e.target.name, value: e.target.value })} required={true} disabled={false}
             styles='border border-brand-dark'
           />
         </div>
         <div className='relative mb-8 mr-2 w-full'>
           <Input
             type='number' id='actScore' name='actScore' value={values.actScore} placeholder='ACT Score'
-            onChange={e => handleChange(e.target)} required={true} disabled={false}
+            onChange={e => handleChange({ name: e.target.name, value: e.target.value })} required={true} disabled={false}
             styles='border border-brand-dark'
           />
         </div>
         <div className='relative mb-8 mr-2 w-full'>
           <Input
             type='number' id='cltScore' name='cltScore' value={values.cltScore} placeholder='CLT Score'
-            onChange={e => handleChange(e.target)} required={true} disabled={false}
+            onChange={e => handleChange({ name: e.target.name, value: e.target.value })} required={true} disabled={false}
             styles='border border-brand-dark'
           />
         </div>

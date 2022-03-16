@@ -1,12 +1,13 @@
 import Head from 'next/head'
 import Step1 from '../components/Form/Step1'
 import Step2 from '../components/Form/Step2'
+import Step3 from '../components/Form/Step3'
 
 const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(e.target, values)
+    console.log(e.target)
   }
 
   return (
@@ -21,6 +22,7 @@ const Register = () => {
         <form onSubmit={handleSubmit}>
           <Step1 />
           <Step2 />
+          <Step3 />
           <button type='submit' className='button'>Next</button>
         </form>
 
