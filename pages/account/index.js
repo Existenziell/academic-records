@@ -39,7 +39,7 @@ const Account = () => {
         <h1 className='text-4xl text-center md:text-left mb-12'>Account</h1>
         <h2 className='text-2xl'>Welcome back, John Doe.</h2>
 
-        <hr className='border-b border-dashed border-gray-600 my-6' />
+        <hr className='border-b border-dashed border-gray-300 my-6' />
 
         <div className='flex items-center'>
           <h3 className='text-lg w-1/6'>NFT:</h3>
@@ -71,14 +71,14 @@ const Account = () => {
           }
         </div>
 
-        <hr className='border-b border-dashed border-gray-600 my-6' />
+        <hr className='border-b border-dashed border-gray-300 my-6' />
 
         <div className='flex items-center'>
           <h3 className='text-lg w-1/6'>Activity:</h3>
           <p>Since your last visit, there has been<span className='font-bold text-xl'> 3 </span>new entries.<br />Review all activity <Link href='/account/activity'><a className='link'>here</a></Link>.</p>
         </div>
 
-        <hr className='border-b border-dashed border-gray-600 my-6' />
+        <hr className='border-b border-dashed border-gray-300 my-6' />
 
         <div className='flex items-center'>
           <h3 className='text-lg w-1/6'>Stored Data:</h3>
@@ -86,7 +86,7 @@ const Account = () => {
           <span className='link text-sm ml-8'>Request change</span>
         </div>
 
-        <hr className='border-b border-dashed border-gray-600 my-6' />
+        <hr className='border-b border-dashed border-gray-300 my-6' />
 
         <div className='flex items-center'>
           <h3 className='text-lg w-1/6'>Notifications:</h3>

@@ -20,7 +20,7 @@ const Register = ({ grades }) => {
           <p>Reports:<span className='font-bold ml-2 text-lg'>15</span></p>
         </div>
 
-        <hr className='border-b border-dashed border-gray-600 my-6' />
+        <hr className='border-b border-dashed border-gray-300 my-6' />
         <div>
           <div className='flex justify-between items-center mb-4'>
             <h2 className='text-xl'>Recorded Grades:</h2>
