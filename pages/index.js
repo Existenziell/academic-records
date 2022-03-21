@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Image from 'next/image'
-import Link from 'next/link'
 import Splash from '../components/Splash';
+import { motion } from 'framer-motion'
 
 export default function Home() {
   const [splashOpen, setSplashOpen] = useState(false)
@@ -11,9 +11,11 @@ export default function Home() {
       <div className='pt-12'>
         <h1 className='text-4xl md:text-6xl text-center'>Academic Records</h1>
         <div className='flex flex-col items-center justify-center space-x-4 w-full'>
-          <div className='text-center my-20'>
-            <Image src='/logo.png' width={422} height={154} alt='Logo' />
-          </div>
+
+          <motion.div animate={{ y: [-200, 50, -30, 20, -10, 0] }}
+            transition={{ ease: "easeInOut", duration: 1 }} className='text-center my-12'>
+            <Image src='/logo.png' width={212} height={118} alt='Logo' />
+          </motion.div>
           <p className='max-w-lg text-xl text-justify'>The internet site that securely records, stores and generates professional school records and reports, meeting the constantly changing needs of today's private and home school academies!</p>
         </div>
 
@@ -61,7 +63,7 @@ export default function Home() {
       </div>
 
       {splashOpen &&
-        <Splash />
+        <Splash setSplashOpen={setSplashOpen} />
       }
     </>
   )

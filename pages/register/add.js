@@ -9,7 +9,7 @@ import Step3 from '../../components/Form/Step3'
 import { AppContext } from '../../context/AppContext'
 
 const Register = () => {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [success, setSuccess] = useState(false)
   const { currentStep, setCurrentStep } = useContext(AppContext)
 
@@ -44,8 +44,8 @@ const Register = () => {
           </div>
           :
           loading ?
-            <div className='flex justify-center mt-16'>
-              <ClimbingBoxLoader color={'var(--color-brand-dark)'} loading={loading} size={20} />
+            <div className='mt-32 ml-40'>
+              <ClimbingBoxLoader color={'var(--color-brand-dark)'} loading={loading} size={25} />
             </div>
             :
             <form onSubmit={handleSubmit} className='max-w-xl mx-auto pb-32'>

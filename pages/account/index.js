@@ -26,7 +26,7 @@ const Account = () => {
     // const data = window.localStorage.getItem(localStorageKey)
     // if (!data) setData({})
     // setData(JSON.parse(data))
-  }, []);
+  }, [])
 
   // if (data === null) {
   //   return (

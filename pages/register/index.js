@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { connectToDatabase } from "../../lib/mongodb"
 
-const Register = () => {
+const Register = ({ grades }) => {
+
   return (
     <>
       <Head>
@@ -19,14 +21,52 @@ const Register = () => {
         </div>
 
         <hr className='border-b border-dashed border-gray-600 my-6' />
+        <div>
+          <h2 className='mb-4 text-xl'>Recorded Grades:</h2>
+          <table cellPadding="12" className='w-full'>
+            <tbody className='whitespace-nowrap'>
+              <tr className='bg-brand-dark/80 text-white dark:bg-brand dark:text-brand-dark'>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Birthdate</td>
+                <td>satScore</td>
+                <td>actScore</td>
+                <td>cltScore</td>
+              </tr>
+              {grades.map(g => (
+                <tr key={g.email}>
+                  <td> {g.firstname} {g.middlename} {g.lastname}</td>
+                  <td>{g.email}</td>
+                  <td>{g.birthdate}</td>
+                  <td>{g.grades.satScore}</td>
+                  <td>{g.grades.actScore}</td>
+                  <td>{g.grades.cltScore}</td>
+                </tr>
+              )
+              )}
+            </tbody>
+          </table>
+        </div>
 
-        <div className='flex flex-col items-start gap-4'>
-          <Link href='/register/add'><a className='button'>Add new student</a></Link>
-          <Link href='/register/add'><a className='button'>Add grade</a></Link>
+        <div className='flex flex-col items-start gap-4 mt-8'>
+          <Link href='/register/add'><a className='button'>Add grades</a></Link>
         </div>
       </div>
     </>
   )
+}
+
+export async function getServerSideProps(context) {
+  const { db } = await connectToDatabase()
+  let grades = await db
+    .collection("grades")
+    .find()
+    .toArray()
+  grades = JSON.parse(JSON.stringify(grades))
+
+  return {
+    props: { grades }, // will be passed to the page component as props
+  }
 }
 
 export default Register
