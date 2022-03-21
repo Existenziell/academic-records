@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { ethers } from 'ethers'
 import { hasEthereum } from '../lib/ethereum'
-import { ConnectWallet } from './ConnectWallet'
+import { ConnectWallet } from './connectWallet'
 import { AppContext } from '../context/AppContext'
 import Link from 'next/link'
 
