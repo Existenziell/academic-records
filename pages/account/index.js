@@ -42,7 +42,7 @@ const Account = () => {
         <hr className='border-b border-dashed border-gray-300 my-6' />
 
         <div className='flex items-center'>
-          <h3 className='text-lg w-1/6'>NFT:</h3>
+          <h3 className='text-lg w-1/6'>Authentication:</h3>
 
           {walletConnected ?
             qrRevealed ?
