@@ -10,10 +10,9 @@ const Connect = () => {
   const [sending, setSending] = useState(false)
   const [errorMsg, setErrorMsg] = useState('')
   const [isSuccess, setIsSuccess] = useState(false)
-  const { handleChange } = useContext(AppContext)
 
   function setData(e) {
-    const { name, value } = e.target
+    const { name, value } = e
     setFormData({ ...formData, ...{ [name]: value } })
   }
 
@@ -51,15 +50,15 @@ const Connect = () => {
 
             <div className='relative mb-8'>
               <Input type='text' id='name' name='name' placeholder='Name'
-                handleChange={handleChange} required={true} disabled={sending || isSuccess} />
+                handleChange={setData} required={true} disabled={sending || isSuccess} />
             </div>
             <div className='relative mb-8'>
               <Input type='email' id='email' name='email' placeholder='Email'
-                handleChange={handleChange} required={true} disabled={sending || isSuccess} />
+                handleChange={setData} required={true} disabled={sending || isSuccess} />
             </div>
             <div className='relative'>
               <Textarea id='message' name='message' placeholder='Message' rows={10}
-                handleChange={handleChange} required={true} disabled={sending} />
+                handleChange={setData} required={true} disabled={sending} />
             </div>
 
             {errorMsg ?
