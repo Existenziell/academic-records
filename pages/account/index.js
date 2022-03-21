@@ -57,10 +57,10 @@ const Account = () => {
                   transition={{ ease: "easeOut", duration: 1 }}
                   initial={{ x: -40 }}
                   className='flex flex-col items-center justify-evenly bg-nftbg bg-cover bg-center w-96 h-96 shadow-lg rounded'>
-                  <div className='rounded text-white font-mono bg-white/20 backdrop-blur-sm px-4 py-2 flex flex-col items-center'>
+                  <div className='rounded text-white font-mono bg-black/40 backdrop-blur-sm px-4 py-2 flex flex-col items-center'>
                     <span>AR Token</span>
                   </div>
-                  <div className='rounded text-white font-mono bg-white/20 backdrop-blur-sm px-4 py-2 flex flex-col items-center'>
+                  <div className='rounded text-white font-mono bg-black/40 backdrop-blur-sm px-4 py-2 flex flex-col items-center'>
                     <span>John Doe</span>
                     <span className='text-xs'>0x6bx5...xz70</span>
                   </div>
