@@ -22,7 +22,11 @@ const Register = ({ grades }) => {
 
         <hr className='border-b border-dashed border-gray-600 my-6' />
         <div>
-          <h2 className='mb-4 text-xl'>Recorded Grades:</h2>
+          <div className='flex justify-between items-center mb-4'>
+            <h2 className='text-xl'>Recorded Grades:</h2>
+            <Link href='/register/add'><a className='button text-xs'>Add grades</a></Link>
+          </div>
+
           <table cellPadding="10" className='w-full text-sm'>
             <tbody className='whitespace-nowrap'>
               <tr className='bg-brand-dark/60 text-white text-base dark:bg-brand dark:text-brand-dark'>
@@ -48,10 +52,7 @@ const Register = ({ grades }) => {
               )}
             </tbody>
           </table>
-        </div>
 
-        <div className='flex flex-col items-start gap-4 mt-8'>
-          <Link href='/register/add'><a className='button'>Add grades</a></Link>
         </div>
       </div>
     </>

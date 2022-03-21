@@ -1,3 +1,5 @@
+import { validateTextarea } from "../../lib/validate"
+
 const Textarea = ({ id, name, message, placeholder, rows, handleChange, required, disabled }) => {
   return (
     <>
@@ -10,7 +12,8 @@ const Textarea = ({ id, name, message, placeholder, rows, handleChange, required
         required={required}
         disabled={disabled}
         placeholder={placeholder}
-        className='peer h-full w-full placeholder-transparent focus:outline-none bg-white/10 backdrop-blur-md rounded-xl pl-4 py-4 border border-gray-200'
+        className='peer h-full w-full placeholder-transparent focus:outline-none bg-white/10 backdrop-blur-md rounded-lg pl-4 py-4 border border-gray-200'
+        onBlur={validateTextarea}
       >
       </textarea>
       <label
