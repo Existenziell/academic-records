@@ -27,11 +27,11 @@ html, body {
 }
 
 ::selection {
-  @apply bg-highlight bg-opacity-50;
+  @apply bg-brand bg-opacity-50;
 }
 
 ::-moz-selection {
-  @apply bg-highlight bg-opacity-50;
+  @apply bg-brand bg-opacity-50;
 }
 
 .link {
