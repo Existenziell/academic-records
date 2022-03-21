@@ -2,7 +2,6 @@ import { useContext } from 'react'
 import { AppContext } from '../../context/AppContext'
 
 const Nav = () => {
-
   const { currentStep, setCurrentStep, lastStep } = useContext(AppContext)
 
   return (

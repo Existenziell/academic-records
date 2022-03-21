@@ -16,7 +16,7 @@ const Step1 = () => {
 
   return (
     <motion.div
-      animate={{ x: [1000, -100, 0] }}
+      animate={{ x: [1000, -100, 50, -10, 0] }}
       transition={{ ease: "easeInOut", duration: 1 }}
     >
       <div className='flex flex-col items-center justify-between'>

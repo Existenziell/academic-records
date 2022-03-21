@@ -9,7 +9,7 @@ import Step3 from '../../components/Form/Step3'
 import { AppContext } from '../../context/AppContext'
 
 const Register = () => {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const { currentStep, setCurrentStep } = useContext(AppContext)
 
@@ -52,11 +52,9 @@ const Register = () => {
               {currentStep === 1 && <Step1 />}
               {currentStep === 2 && <Step2 />}
               {currentStep === 3 && <Step3 />}
-
               <Nav />
             </form>
         }
-
       </div>
     </>
   )
