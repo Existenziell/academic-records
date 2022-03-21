@@ -6,6 +6,10 @@ export const localStorageKey = 'AR_FormData'
 // App State
 export const StateProvider = ({ children }) => {
 
+  const [currentStep, setCurrentStep] = useState(1)
+  const lastStep = 3
+  const [isLoggedIn, setLoggedIn] = useState('')
+
   const [values, setValues] = useState({
     firstname: '',
     middlename: '',
@@ -25,7 +29,7 @@ export const StateProvider = ({ children }) => {
   }
 
   return (
-    <AppContext.Provider value={{ values, setValues, handleChange }}>
+    <AppContext.Provider value={{ values, setValues, handleChange, currentStep, setCurrentStep, lastStep, isLoggedIn, setLoggedIn }}>
       {children}
     </AppContext.Provider>
   )

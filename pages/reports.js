@@ -8,7 +8,7 @@ const Reports = () => {
         <title>Reports | Academic Records</title>
       </Head>
 
-      <div className="min-h-screen">
+      <div className="pt-12">
         <h1 className='text-4xl text-center md:text-left mb-8'>Reports</h1>
         <h2 className='text-xl mb-4'>Available Reports:</h2>
         <ul className='ml-4 list-disc'>

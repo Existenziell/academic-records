@@ -9,8 +9,9 @@ import Nav from '../components/Nav'
 import DarkModeToggle from '../components/DarkModeToggle'
 import { StateProvider } from '../context/AppContext'
 import { useContext } from 'react'
+import { motion } from "framer-motion";
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps, router }) {
 
   return (
     <StateProvider>
@@ -27,8 +28,22 @@ function App({ Component, pageProps }) {
       <Nav />
       <DarkModeToggle />
 
-      <main className='w-full pt-8 pb-16 px-4 md:px-8 text-brand-dark bg-white bg-repeat dark:bg-brand-dark dark:text-brand'>
-        <Component {...pageProps} />
+      <main className='md:pl-48 px-4 md:px-8 text-brand-dark bg-white bg-repeat dark:bg-brand-dark dark:text-brand min-h-screen'>
+        <motion.div
+          key={router.route}
+          initial="initial"
+          animate="animate"
+          variants={{
+            initial: {
+              opacity: 0,
+            },
+            animate: {
+              opacity: 1,
+            },
+          }}
+        >
+          <Component {...pageProps} />
+        </motion.div>
       </main>
     </StateProvider>
   )

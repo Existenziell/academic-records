@@ -1,6 +1,7 @@
 import { useEffect, useContext } from 'react'
 import Input from './Input'
 import { AppContext, localStorageKey } from '../../context/AppContext'
+import { motion } from 'framer-motion'
 
 const Step1 = () => {
 
@@ -14,8 +15,12 @@ const Step1 = () => {
   }, [])
 
   return (
-    <div>
-      <div className='flex items-center justify-between'>
+    <motion.div
+      animate={{ x: [1000, -100, 0] }}
+      transition={{ ease: "easeInOut", duration: 1 }}
+    // initial={{ x: 1000 }}
+    >
+      <div className='flex flex-col items-center justify-between'>
         <div className='relative mb-8 mr-2 w-full'>
           <Input
             type='text' id='firstname' name='firstname' value={values.firstname} placeholder='First Name'
@@ -26,7 +31,7 @@ const Step1 = () => {
         <div className='relative mb-8 mr-2 w-full'>
           <Input
             type='text' id='middlename' name='middlename' value={values.middlename} placeholder='Middle Name'
-            handleChange={handleChange} required={true} disabled={false}
+            handleChange={handleChange} required={false} disabled={false}
             styles='border border-brand-dark'
           />
         </div>
@@ -46,7 +51,7 @@ const Step1 = () => {
           styles='border border-brand-dark'
         />
       </div>
-    </div>
+    </motion.div>
   )
 }
 

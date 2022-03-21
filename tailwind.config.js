@@ -21,7 +21,7 @@ module.exports = {
         graduate: 'url(/graduate3.jpg)',
         logo: 'url(/logo.png)',
         'logo-white': 'url(/logo-white.png)',
-
+        nftbg: 'url(/nftbg.jpg)',
       },
     },
   },

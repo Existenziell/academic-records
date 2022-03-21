@@ -1,7 +1,9 @@
 import { useEffect, useContext } from 'react'
-import { AppContext, localStorageKey } from '../../context/AppContext'
-import DPicker from './DatePicker';
-import BPicker from './BirthdayPicker';
+import { AppContext, localStorageKey, } from '../../context/AppContext'
+import DPicker from './DatePicker'
+import BPicker from './BirthdayPicker'
+import Textarea from './Textarea'
+import { motion } from 'framer-motion'
 
 const Step3 = () => {
 
@@ -16,7 +18,7 @@ const Step3 = () => {
 
   return (
     <>
-      <div className='flex items-center justify-between mb-8 mr-2 w-full'>
+      <div className='flex items-center justify-between mb-12 mr-2 w-full'>
         <label
           htmlFor='gradelevel'
           className='mr-4 min-w-max'>
@@ -25,7 +27,20 @@ const Step3 = () => {
 
         <BPicker name='birthdate' />
       </div>
-      <DPicker name='date' styles='my-8' />
+
+      <div className='relative'>
+        <Textarea id='message' name='message' placeholder='Notes' rows={10}
+          onChange={handleChange} required={true} disabled={false} />
+      </div>
+
+      <div className='flex items-center space-x-8'>
+        <label
+          htmlFor='gradelevel'
+          className='mr-4 min-w-max'>
+          Date of Grade:
+        </label>
+        <DPicker name='date' styles='my-8 inline' />
+      </div>
     </>
   )
 }

@@ -2,6 +2,7 @@ import { useEffect, useContext } from 'react'
 import SelectList from './SelectList'
 import Input from './Input'
 import { AppContext, localStorageKey } from '../../context/AppContext'
+import { motion } from 'framer-motion'
 
 const Step2 = () => {
 
@@ -34,15 +35,18 @@ const Step2 = () => {
   }, [])
 
   return (
-    <div>
+    <motion.div
+    // animate={{ x: [1000, -100, 0] }}
+    // transition={{ ease: "easeInOut", duration: 1 }}
+    >
       <SelectList
         options={grades}
         name='gradelevel'
         label='Grade level to begin reporting on Transcript:'
-        styles='mb-8'
+        styles='mb-16'
       />
 
-      <div className='flex items-center justify-between'>
+      <div className='flex flex-col items-center justify-between'>
         <div className='relative mb-8 mr-2 w-full'>
           <Input
             type='number' id='satScore' name='satScore' value={values.satScore} placeholder='SAT Score'
@@ -65,7 +69,7 @@ const Step2 = () => {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

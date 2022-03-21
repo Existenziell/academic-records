@@ -35,20 +35,19 @@ html, body {
 }
 
 .link {
-  @apply underline underline-offset-2 outline-none transition-all duration-300;
+  @apply cursor-pointer underline underline-offset-2 outline-none transition-all duration-300;
 }
 
 .link:hover {
   @apply no-underline rounded transition-all duration-500 text-white px-1 bg-brand-dark dark:bg-brand; 
 }
 
-
 /* ==========================================================================
 	Navigation
 	========================================================================== */
 
 .active-nav {
-  @apply md:border-b-2 md:border-brand-dark md:dark:border-brand ;
+  @apply md:bg-gray-200 md:dark:bg-brand md:dark:bg-opacity-50;
 }
 
 
@@ -57,7 +56,7 @@ html, body {
 	========================================================================== */
 
 .button {
-  @apply bg-brand-dark text-white py-3 px-6 rounded shadow-lg transition-all cursor-pointer
+  @apply bg-brand-dark text-white py-3 px-6 rounded shadow-lg transition-all cursor-pointer font-mono
     hover:shadow-none hover:text-brand dark:bg-brand dark:text-brand-dark
     focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-dark;
 }
