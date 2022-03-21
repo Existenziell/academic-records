@@ -23,24 +23,26 @@ const Register = ({ grades }) => {
         <hr className='border-b border-dashed border-gray-600 my-6' />
         <div>
           <h2 className='mb-4 text-xl'>Recorded Grades:</h2>
-          <table cellPadding="12" className='w-full'>
+          <table cellPadding="10" className='w-full'>
             <tbody className='whitespace-nowrap'>
               <tr className='bg-brand-dark/80 text-white dark:bg-brand dark:text-brand-dark'>
                 <td>Name</td>
                 <td>Email</td>
                 <td>Birthdate</td>
+                <td>Message</td>
                 <td>satScore</td>
                 <td>actScore</td>
                 <td>cltScore</td>
               </tr>
-              {grades.map(g => (
-                <tr key={g.email}>
+              {grades.map((g, i) => (
+                <tr key={i}>
                   <td> {g.firstname} {g.middlename} {g.lastname}</td>
                   <td>{g.email}</td>
                   <td>{g.birthdate}</td>
-                  <td>{g.grades.satScore}</td>
-                  <td>{g.grades.actScore}</td>
-                  <td>{g.grades.cltScore}</td>
+                  <td>{g.message}</td>
+                  <td>{g.satScore}</td>
+                  <td>{g.actScore}</td>
+                  <td>{g.cltScore}</td>
                 </tr>
               )
               )}

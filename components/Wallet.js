@@ -41,7 +41,7 @@ const Wallet = () => {
     })
 
     window.ethereum?.on('chainChanged', (chainId) => {
-      console.log("chainChanged", chainId);
+      // console.log("chainChanged", chainId);
     })
   }, [router])
 

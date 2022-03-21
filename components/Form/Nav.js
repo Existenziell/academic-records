@@ -8,12 +8,12 @@ const Nav = () => {
     <div className='flex items-center justify-between'>
       <div>
         {currentStep > 1 &&
-          <button className='button' onClick={() => setCurrentStep(currentStep - 1)}>Back</button>
+          <p className='button' onClick={() => setCurrentStep(currentStep - 1)}>Back</p>
         }
       </div>
       <div>
         {currentStep < lastStep &&
-          <button className='button' onClick={() => setCurrentStep(currentStep + 1)}>Next</button>
+          <p className='button' onClick={() => setCurrentStep(currentStep + 1)}>Next</p>
         }
       </div>
       {currentStep === lastStep &&

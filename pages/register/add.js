@@ -11,18 +11,30 @@ import { AppContext } from '../../context/AppContext'
 const Register = () => {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
-  const { currentStep, setCurrentStep } = useContext(AppContext)
+  const { values, setValues, currentStep, setCurrentStep } = useContext(AppContext)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
-    // console.log(e.target)
+    const data = values
 
-    setTimeout(function () {
-      setSuccess(true)
+    try {
+      const res = await fetch(`/api/addStudent`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+
       setLoading(false)
+      setSuccess(true)
       setCurrentStep(1)
-    }, 1000)
+      return res
+    } catch (error) {
+      // console.error(error);
+      return error
+    }
   }
 
   return (
@@ -39,7 +51,7 @@ const Register = () => {
           <div className='flex flex-col items-start'>
             <h1 className='text-2xl mb-2'>Transaction was successful</h1>
             <a href='https://ropsten.etherscan.io/tx/0x8a360917e01c35eb118de1792836f92770654f02c35d19ff51972e28de6c247a' className='link mb-8' target='_blank'>&rarr; Verify transaction on Blockchain</a>
-            <Link href='/register'><a className='link'>Add more students</a></Link>
+            <Link href='/register'><a className='link'>Add more grades</a></Link>
             <Link href='/account'><a className='link'>See Account</a></Link>
           </div>
           :

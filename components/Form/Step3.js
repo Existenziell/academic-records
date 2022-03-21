@@ -29,8 +29,8 @@ const Step3 = () => {
       </div>
 
       <div className='relative'>
-        <Textarea id='message' name='message' placeholder='Notes' rows={10}
-          onChange={handleChange} required={true} disabled={false} />
+        <Textarea id='message' name='message' placeholder='Notes' rows={10} message={values.message}
+          handleChange={handleChange} required={true} disabled={false} />
       </div>
 
       <div className='flex items-center space-x-8'>

@@ -2,9 +2,16 @@ const Textarea = ({ id, name, message, placeholder, rows, handleChange, required
   return (
     <>
       <textarea
-        id={id} name={name} onChange={handleChange} rows={rows} required={required}
-        disabled={disabled} placeholder={placeholder}
-        className='peer h-full w-full placeholder-transparent focus:outline-none bg-white/10 backdrop-blur-md rounded-xl pl-4 py-4 border border-gray-200'>
+        id={id}
+        name={name}
+        onChange={e => handleChange({ name: e.target.name, value: e.target.value })}
+        defaultValue={message}
+        rows={rows}
+        required={required}
+        disabled={disabled}
+        placeholder={placeholder}
+        className='peer h-full w-full placeholder-transparent focus:outline-none bg-white/10 backdrop-blur-md rounded-xl pl-4 py-4 border border-gray-200'
+      >
       </textarea>
       <label
         htmlFor={id}
