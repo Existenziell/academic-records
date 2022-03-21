@@ -4,7 +4,7 @@ import { BirthdayPicker } from "react-birthday-picker"
 
 const BPicker = ({ name }) => {
 
-  const [date, setDate] = useState(["Day", "Month", "Year"]);
+  const [date, setDate] = useState(["Day", "Month", "Year"])
   const { handleChange } = useContext(AppContext)
 
   const handleFirst = (date) => {

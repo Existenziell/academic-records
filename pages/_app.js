@@ -9,7 +9,7 @@ import Nav from '../components/Nav'
 import DarkModeToggle from '../components/DarkModeToggle'
 import { StateProvider } from '../context/AppContext'
 import { useContext } from 'react'
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
 
 function App({ Component, pageProps, router }) {
 

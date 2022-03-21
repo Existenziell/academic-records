@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import Image from 'next/image'
-import Splash from '../components/Splash';
+import Splash from '../components/Splash'
 import { motion } from 'framer-motion'
 
 export default function Home() {
