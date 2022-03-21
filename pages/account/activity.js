@@ -28,9 +28,9 @@ const Activity = () => {
         <h1 className='text-4xl text-center md:text-left mb-8'>Activity</h1>
         <div>
           <p className='border border-brand-dark border-opacity-50 rounded-sm p-4 mb-8'>All additions and changes are securely stored on the blockchain. You can verify every transaction by clickling on 'Verify'. </p>
-          <table cellPadding="10" className='w-full'>
+          <table cellPadding="10" className='w-full text-sm'>
             <tbody className='whitespace-nowrap'>
-              <tr className='bg-brand-dark/80 text-white text-xl dark:bg-brand dark:text-brand-dark'>
+              <tr className='bg-brand-dark/60 text-white text-base dark:bg-brand dark:text-brand-dark'>
                 <td>Date</td>
                 <td>IP</td>
                 <td>User</td>

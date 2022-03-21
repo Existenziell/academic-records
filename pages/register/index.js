@@ -23,9 +23,9 @@ const Register = ({ grades }) => {
         <hr className='border-b border-dashed border-gray-600 my-6' />
         <div>
           <h2 className='mb-4 text-xl'>Recorded Grades:</h2>
-          <table cellPadding="10" className='w-full'>
+          <table cellPadding="10" className='w-full text-sm'>
             <tbody className='whitespace-nowrap'>
-              <tr className='bg-brand-dark/80 text-white dark:bg-brand dark:text-brand-dark'>
+              <tr className='bg-brand-dark/60 text-white text-base dark:bg-brand dark:text-brand-dark'>
                 <td>Name</td>
                 <td>Email</td>
                 <td>Birthdate</td>
@@ -39,7 +39,7 @@ const Register = ({ grades }) => {
                   <td> {g.firstname} {g.middlename} {g.lastname}</td>
                   <td>{g.email}</td>
                   <td>{g.birthdate}</td>
-                  <td>{g.message}</td>
+                  <td className='truncate max-w-xs overflow-hidden'>{g.message}</td>
                   <td>{g.satScore}</td>
                   <td>{g.actScore}</td>
                   <td>{g.cltScore}</td>
