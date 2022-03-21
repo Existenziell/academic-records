@@ -9,6 +9,7 @@ export const StateProvider = ({ children }) => {
   const [currentStep, setCurrentStep] = useState(1)
   const lastStep = 3
   const [isLoggedIn, setLoggedIn] = useState('')
+  const [walletConnected, setWalletConnected] = useState(false)
 
   const [values, setValues] = useState({
     firstname: '',
@@ -29,7 +30,7 @@ export const StateProvider = ({ children }) => {
   }
 
   return (
-    <AppContext.Provider value={{ values, setValues, handleChange, currentStep, setCurrentStep, lastStep, isLoggedIn, setLoggedIn }}>
+    <AppContext.Provider value={{ values, setValues, handleChange, currentStep, setCurrentStep, lastStep, isLoggedIn, setLoggedIn, walletConnected, setWalletConnected }}>
       {children}
     </AppContext.Provider>
   )
